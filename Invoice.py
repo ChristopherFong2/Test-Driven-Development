@@ -7,7 +7,11 @@ class Invoice:
         self.items['price'] = price
         self.items['discount'] = discount
         return self.items
-
+    def isNotNegative(self):
+        if self.items['qnt'] < 0 or self.items['price'] < 0 or self.items['discount'] > 0:
+            return 1
+        else:
+            return 0
     def totalImpurePrice(self, products):
         total_impure_price = 0
         for k, v in products.items():

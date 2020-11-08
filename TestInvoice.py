@@ -22,3 +22,11 @@ def test_CanCalculateTotalDiscount(invoice, products):
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice. totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+def test_AddProducts(invoice):
+    invoice.addProduct(10, 3.75, 5)
+
+def test_IsNotNegative(invoice):
+    invoice.addProduct(10, 3.75, -5)
+    invoice.isNotNegative()
+    assert invoice.isNotNegative() == 0
